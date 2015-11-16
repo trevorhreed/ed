@@ -1,0 +1,16 @@
+.tools {
+  padding: .5rem 0;
+}
+.tools .tool {
+  outline: none;
+  border: solid 1px #ddd;
+  background: #eee;
+}
+.tools .tool:hover {
+  border: solid 1px #ccc;
+  background: #ddd;
+}
+.tools .tool:active {
+  border: solid 1px #ddd;
+  background: #eee;
+}
