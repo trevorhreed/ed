@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ed.</title>
+    <style>
+      .tools {
+        padding: .5rem 0;
+      }
+      .tools .tool {
+        outline: none;
+        border: solid 1px #ddd;
+        background: #eee;
+      }
+      .tools .tool:hover {
+        border: solid 1px #ccc;
+        background: #ddd;
+      }
+      .tools .tool:active {
+        border: solid 1px #ddd;
+        background: #eee;
+      }
+      .tools span{
+        padding:0 .5em;
+      }
+      .tools span::before{
+        content:'-';
+      }
+      #editor{
+        border:solid 1px #aaa;
+        height:500px;
+      }
+    </style>
+  </head>
+  <body>
+
+    <div class="tools">
+      <button class="tool" data-cmd="B">B</button>
+      <button class="tool" data-cmd="I">I</button>
+      <button class="tool" data-cmd="U">U</button>
+      <button class="tool" data-cmd="S">S</button>
+      <span></span>
+      <button class="tool" data-cmd="H1">H1</button>
+      <button class="tool" data-cmd="H2">H2</button>
+      <button class="tool" data-cmd="H3">H3</button>
+      <button class="tool" data-cmd="H4">H4</button>
+      <button class="tool" data-cmd="H5">H5</button>
+      <button class="tool" data-cmd="H6">H6</button>
+      <button class="tool" data-cmd="P">P</button>
+      <span></span>
+      <button class="tool" data-cmd="IMG" data-cmd-value="true">Image</button>
+    </div>
+    <div id="editor"></div>
+    <code id="html"></code>
+
+    <script src="ed.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
+    <script>
+
+      $(function(){
+        var content =
+            '<p>Hello <u>one <i>cool</i> ape</u> World</p><figure><img src="http://vkontakte.ru/images/gifts/256/70.jpg"></figure>';
+            // '<p>Hello <u>one <i>cool</i> ape</u> World</p>';
+
+        var editor = ed.create('#editor', content);
+        editor.on('contentupdate', function(html){
+          $('#html').text(html);
+        })
+        $('.tool').on('click', function(){
+          var command = $(this).attr('data-cmd'),
+              value;
+          if($(this).attr('data-cmd-value')){
+            value = prompt("Please enter a value:");
+          }
+          editor.exec(command, value);
+        })
+      });
+
+    </script>
+  </body>
+</html>

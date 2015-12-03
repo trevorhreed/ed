@@ -1,0 +1,36 @@
+{
+  "name": "ed",
+  "version": "0.1.0",
+  "description": "An article editor named Ed.",
+  "main": "init.js",
+  "directories": {
+    "example": "example"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/trevorhreed/ed.git"
+  },
+  "keywords": [
+    "wysiwyg",
+    "editor",
+    "javascript",
+    "html"
+  ],
+  "author": "Trevor Reed",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/trevorhreed/ed/issues"
+  },
+  "homepage": "https://github.com/trevorhreed/ed#readme",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-plumber": "^1.0.1",
+    "gulp-uglify": "^1.5.1",
+    "gulp-watch": "^4.3.5",
+    "live-server": "^0.8.2"
+  }
+}

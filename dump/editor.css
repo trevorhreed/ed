@@ -1,0 +1,6 @@
+p{
+  border:dotted 1px #888;
+}
+.active{
+  border:dotted 1px red
+}
